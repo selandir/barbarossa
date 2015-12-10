@@ -1,5 +1,6 @@
 Barbarossa::Application.routes.draw do
   get '/', :to => 'home#index'
+  get '/test', :to => 'home#json_test'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
