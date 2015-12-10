@@ -52,6 +52,6 @@ test:
 #
 production:
   <<: *default
-  database: railsroot_vr_global_production
+  database: railsroot_vr_global_development
   username: vrdev
   password: dev
