@@ -16,6 +16,9 @@ gem 'sass-rails'
 gem 'devise'
 gem 'whenever'
 
+# fa
+gem "font-awesome-rails"
+
 group :assets do
   gem 'coffee-rails'
 
