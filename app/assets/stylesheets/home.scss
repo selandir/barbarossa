@@ -63,36 +63,51 @@ body {
 }
 .paladin-element {
     border-left: 12px solid #F58CBA !important;
+    background-image: url('/img/tyrion.png');
 }
 .deathknight-element {
     border-left: 12px solid #C41F3B !important;
+    background-image: url('/img/dk.png');
 }
 .druid-element {
     border-left: 12px solid #FF7D0A !important;
+    background-image: url('/img/druid.png');
   }
   .hunter-element {
     border-left: 12px solid #ABD473 !important;
+    background-image: url('/img/hunter.png');
   }
   .mage-element {
     border-left: 12px solid #69CCF0 !important;
+    background-image: url('/img/mage.png');
   }
   .priest-element {
     border-left: 12px solid #e0e0e0 !important;
+    background-image: url('/img/priest.png');
   }
   .rogue-element {
     border-left: 12px solid #FFF569 !important;
+    background-image: url('/img/rogue.png');
   }
   .shaman-element {
     border-left: 12px solid #0070DE !important;
+    background-image: url('/img/shaman.png');
   }
   .warlock-element {
     border-left: 12px solid #9482C9 !important;
+    background-image: url('/img/lock.png');
   }
   .warrior-element {
     border-left: 12px solid #C79C6E !important;
+    background-image: url('/img/warrior.png');
   }
   .demonhunter-element {
     border-left: 12px solid #4B5413 !important;
+    background-image: url('/img/demonhunter.png');
+  }
+  .monk-element {
+    border-left: 12px solid #00FF96 !important;
+    background-image: url('/img/monk.png');
   }
 
   .pull-right {
@@ -100,3 +115,18 @@ body {
     float:right !important;
     text-align: right;
   }
+
+.list4{
+  margin-left: -50px;
+}
+.role-element {
+  margin: 10px;
+  padding: 10px;
+  list-style-type: none;
+  border: 1px lightgray solid;
+  border-radius: 3px;
+}
+.itemlvl {
+  float: left;
+  font-weight: bold;
+}

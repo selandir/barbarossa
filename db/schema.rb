@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510145252) do
+ActiveRecord::Schema.define(version: 20160510155228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "character_infos", force: :cascade do |t|
+    t.integer  "character_id"
+    t.integer  "item_lvl"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160510145252) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "game_alt_role"
+    t.string   "armory_addr"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -57,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160510145252) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "character_infos", "characters"
   add_foreign_key "characters", "users"
   add_foreign_key "posts", "users"
 end

@@ -62,13 +62,14 @@
                     <div class="col-lg-3">
                       <div class="ibox">
                         <div class="ibox-content">
-                          <h3>Meele damage dealers</h3>
+                          <h3>Meele DD</h3>
                           <i class="fa fa-gavel fa-2x"></i><br>
                           <h2 id="ddm-wow-n"></h2>
-                          <ul class="sortable-list connectList agile-list ui-sortable" id="ddm-wow">
-                            <% @all_characters.where(game_role: 'Melee DD').each do |c| %>
-                            <li class="<%= c.game_class.downcase %>-element">
+                          <ul class="list4" id="ddm-wow">
+                            <% @all_characters.select{|e| e.game_role == 'Melee DD'}.each do |c| %>
+                            <li class="role-element <%= c.game_class.downcase.gsub(' ', '') %>-element">
                               <%= c.name %>
+                              <span class='itemlvl'><%= c.ilvl %></span>
                             </li>
                             <% end %>
                           </ul>
@@ -78,13 +79,14 @@
                     <div class="col-lg-3">
                       <div class="ibox">
                         <div class="ibox-content">
-                          <h3>Ranged damage dealers</h3>
+                          <h3>Ranged DD</h3>
                           <i class="fa fa-crosshairs fa-2x"></i><br>
                           <h2 id="dd-wow-n"></h2>
-                          <ul class="sortable-list connectList agile-list ui-sortable" id="dd-wow">
-                            <% @all_characters.where(game_role: 'Ranged DD').each do |c| %>
-                            <li class="<%= c.game_class.downcase %>-element">
+                          <ul class="list4" id="dd-wow">
+                            <% @all_characters.select{|e| e.game_role == 'Ranged DD'}.each do |c| %>
+                            <li class="role-element <%= c.game_class.downcase.gsub(' ', '') %>-element">
                               <%= c.name %>
+                              <span class='itemlvl'><%= c.ilvl %></span>
                             </li>
                             <% end %>
                           </ul>
@@ -97,10 +99,11 @@
                           <h3>Tanks</h3>
                           <i class="fa fa-shield fa-2x"></i><br>
                           <h2 id="tanks-wow-n"></h2>
-                          <ul class="sortable-list connectList agile-list ui-sortable" id="tanks-wow">
-                            <% @all_characters.where(game_role: 'Tank').each do |c| %>
-                            <li class="<%= c.game_class.downcase %>-element">
+                          <ul class="list4" id="tanks-wow">
+                            <% @all_characters.select{|e| e.game_role == 'Tank'}.each do |c| %>
+                            <li class="role-element <%= c.game_class.downcase.gsub(' ', '') %>-element">
                               <%= c.name %>
+                              <span class='itemlvl'><%= c.ilvl %></span>
                             </li>
                             <% end %>
                           </ul>
@@ -113,10 +116,11 @@
                           <h3>Healers</h3>
                           <i class="fa fa-plus fa-2x"></i><br>
                           <h2 id="healers-wow-n"></h2>
-                          <ul class="sortable-list connectList agile-list ui-sortable" id="healers-wow">
-                            <% @all_characters.where(game_role: 'Healer').each do |c| %>
-                            <li class="<%= c.game_class.downcase %>-element">
+                          <ul class="list4" id="healers-wow">
+                            <% @all_characters.select{|e| e.game_role == 'Healer' }.each do |c| %>
+                            <li class="role-element <%= c.game_class.downcase.gsub(' ', '') %>-element">
                               <%= c.name %>
+                              <span class='itemlvl'><%= c.ilvl %></span>
                             </li>
                             <% end %>
                           </ul>
