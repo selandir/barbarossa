@@ -1,0 +1,33 @@
+<div style="border: 1px lightgray solid; border-radius: 5px; padding: 10px; max-height: 200px; overflow-y: auto">
+
+  <% Post.all.each do |p| %>
+  <div style="border: 1px lightgray solid; border-radius: 5px; padding: 5px; text-align: left; margin: 2px 0px 3px 0px;">
+    <%= p.content %>
+    <div style="font-size: 12px; text-align: right; vertical-align: bottom; size: 10px;">
+      <b><%= p.user.characters.first.name rescue p.user.email %></b><br>
+      <em style="font-size: 10px;"><%=p.created_at.strftime("%d-%m-%Y %H:%M")%></em>
+    </div>
+  </div>
+  <% end %>
+
+
+</div>
+
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= f.text_area :content, cols: 50, rows: 4, :class => 'shoutbox-txtarea'%>
+  <div class="actions">
+    <%= f.submit 'Shout!', :class => 'btn btn-success' %>
+  </div>
+<% end %>

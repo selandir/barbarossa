@@ -1,4 +1,9 @@
 Barbarossa::Application.routes.draw do
+
+  resources :characters
+  resources :posts
+  devise_for :users
+  
   get '/', :to => 'home#index'
   get '/test', :to => 'home#json_test'
   # The priority is based upon order of creation:

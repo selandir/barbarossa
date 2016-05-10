@@ -1,3 +1,4 @@
+Guardfile
 *.rbc
 capybara-*.html
 .rspec

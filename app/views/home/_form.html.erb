@@ -1,0 +1,103 @@
+<form action="#!" class="form-horizontal" method="post" onsubmit="return submitForm()" role="form" style="padding-top: 15px;">
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="email">Nick:</label>
+    <div class="col-sm-6">
+      <input class="form-control" id="nick" name="name" placeholder="In-game nickname" required="" type="text">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="pwd">Additional info:</label>
+    <div class="col-sm-6">
+      <input class="form-control" id="tooltip" name="tooltip" placeholder="Tooltip info" type="text">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="pwd">Battle-tag:</label>
+    <div class="col-sm-6">
+      <input class="form-control" id="btag" name="batletag" placeholder="JohnCena#1234" required="" type="text">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="pwd">Class:</label>
+    <div class="col-sm-6">
+      <select class="form-control" id="wow-class" name="class">
+        <option>
+          Death knight
+        </option>
+        <option>
+          Demon hunter
+        </option>
+        <option>
+          Druid
+        </option>
+        <option>
+          Hunter
+        </option>
+        <option>
+          Mage
+        </option>
+        <option>
+          Monk
+        </option>
+        <option>
+          Paladin
+        </option>
+        <option>
+          Priest
+        </option>
+        <option>
+          Rogue
+        </option>
+        <option>
+          Shaman
+        </option>
+        <option>
+          Warlock
+        </option>
+        <option>
+          Warrior
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="pwd">Role:</label>
+    <div class="col-sm-6">
+      <select class="form-control" id="wow-role" name="role">
+        <option>
+          Tank
+        </option>
+        <option>
+          Damage
+        </option>
+        <option>
+          Healer
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-6">
+      <div class="checkbox">
+        <label><input name="whine" required="" type="checkbox">
+          Zapoznałem(am) się z zasadami panującymi w gildii</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-6">
+      <button class="btn btn-info" type="submit">Zatwierdź</button>
+    </div>
+  </div>
+</form>
+<div id="form_loading" style="display:none;">
+  <h3>LOADING REQUEST ...</h3><br>
+  <i class="fa fa-4x fa-spinner fa-spin"></i>
+</div>
+<div id="form_success" style="display:none;">
+  <h3>Data sent.</h3>
+  <i class="fa fa-4x fa-check"></i>
+</div>
+</div>
+</div>
+</div>

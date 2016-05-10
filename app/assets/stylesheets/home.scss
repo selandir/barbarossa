@@ -1,3 +1,102 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    padding-top: 70px;
+    background-color: #fafafa;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+.character-info {
+    border: 0 gray solid;
+    border-radius: 3px;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+    background-color: #ddd;
+    min-width: 95px;
+    max-width: 150px;
+}
+.character-info .name {
+    color: #333;
+    vertical-align: top;
+    font-size: 105%;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.role {
+    height: 24px;
+    width: 24px;
+}
+.class-icon {
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-right: 5px;
+}
+.class-icon2 {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+.img-cover {
+    background: url("http://i.imgur.com/wLdJ2vx.png") no-repeat center;
+    height: 200px;
+    width: 96%;
+    margin-left: 2%;
+    position: center;
+    position: relative;
+    z-index: 100;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.main-logo-name {
+    color: #844;
+    font-size: 110px;
+    font-weight: 800;
+    letter-spacing: -10px;
+    margin-bottom: -10px;
+}
+.circle-class {
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+.paladin-element {
+    border-left: 12px solid #F58CBA !important;
+}
+.deathknight-element {
+    border-left: 12px solid #C41F3B !important;
+}
+.druid-element {
+    border-left: 12px solid #FF7D0A !important;
+  }
+  .hunter-element {
+    border-left: 12px solid #ABD473 !important;
+  }
+  .mage-element {
+    border-left: 12px solid #69CCF0 !important;
+  }
+  .priest-element {
+    border-left: 12px solid #e0e0e0 !important;
+  }
+  .rogue-element {
+    border-left: 12px solid #FFF569 !important;
+  }
+  .shaman-element {
+    border-left: 12px solid #0070DE !important;
+  }
+  .warlock-element {
+    border-left: 12px solid #9482C9 !important;
+  }
+  .warrior-element {
+    border-left: 12px solid #C79C6E !important;
+  }
+  .demonhunter-element {
+    border-left: 12px solid #4B5413 !important;
+  }
+
+  .pull-right {
+    margin: 15px;
+    float:right !important;
+    text-align: right;
+  }

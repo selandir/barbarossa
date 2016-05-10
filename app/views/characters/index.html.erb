@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Characters</h1>
+
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>class</th>
+      <th>role</th>
+      <th>alt role</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <td><%= character.name %></td>
+        <td>
+          <div class="<%= character.game_class.downcase %>-element">
+            <%= character.game_class %>
+          </div>
+        </td>
+        <td><%= role_name_to_fa(character.game_role).html_safe %></td>
+        <td><%= role_name_to_fa(character.game_alt_role).html_safe %></td>
+        <td><%= link_to 'Show', character, class: 'btn btn-xs btn-default' %></td>
+        <td><%= link_to 'Edit', edit_character_path(character), class: 'btn btn-xs btn-default' %></td>
+        <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Character', new_character_path, :class => 'btn btn-success' %>

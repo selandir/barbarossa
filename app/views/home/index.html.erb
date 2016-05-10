@@ -1,0 +1,183 @@
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <h1 class="main-logo-name">BARBAROSSA</h1>
+    Gildia "Barbarossa"
+    <em>(dawniej "Oferujemy Kurtule")</em><br>
+    <a href="#poll">
+      <h2 style="font-weight:800;">
+        Kim grasz w Legionie?(click!)
+      </h2>
+    </a>
+    <br>
+    <div class="row">
+      <div class="col-lg-3">
+        <%= render 'contact' %>
+      </div>
+      <div class="col-lg-9">
+        <%= render 'shoutbox' %>
+      </div>
+    </div>
+
+    <%= render 'info' %>
+  </div>
+</div>
+<!--<div class="img-cover"></div>-->
+<hr>
+
+<div class="container" id="poll">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <p class="lead" style="margin-top:50px;">Kim grasz w Legionie?</p>
+
+      <ul class="list-unstyled">
+        <li>By Selandir</li>
+        <li>
+          <i>"Justice demand retribution!"</i>
+        </li>
+      </ul>
+
+      <%= render 'form' %>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div id='loading'>
+              <h3>LOADING DATA ...</h3><br>
+              <i class="fa fa-4x fa-spinner fa-spin"></i>
+            </div>
+
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Lista osób wg. ról</a>
+              </li>
+              <li role="presentation">
+                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Lista osób wg. klas</a>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade active in" id="home">
+                <div class="col-lg-12 text-center">
+                  <div class="row">
+                    <div class="col-lg-3">
+                      <div class="ibox">
+                        <div class="ibox-content">
+                          <h3>Meele damage dealers</h3>
+                          <i class="fa fa-gavel fa-2x"></i><br>
+                          <h2 id="ddm-wow-n"></h2>
+                          <ul class="sortable-list connectList agile-list ui-sortable" id="ddm-wow">
+                            <% @all_characters.where(game_role: 'Melee DD').each do |c| %>
+                            <li class="<%= c.game_class.downcase %>-element">
+                              <%= c.name %>
+                            </li>
+                            <% end %>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="ibox">
+                        <div class="ibox-content">
+                          <h3>Ranged damage dealers</h3>
+                          <i class="fa fa-crosshairs fa-2x"></i><br>
+                          <h2 id="dd-wow-n"></h2>
+                          <ul class="sortable-list connectList agile-list ui-sortable" id="dd-wow">
+                            <% @all_characters.where(game_role: 'Ranged DD').each do |c| %>
+                            <li class="<%= c.game_class.downcase %>-element">
+                              <%= c.name %>
+                            </li>
+                            <% end %>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="ibox">
+                        <div class="ibox-content">
+                          <h3>Tanks</h3>
+                          <i class="fa fa-shield fa-2x"></i><br>
+                          <h2 id="tanks-wow-n"></h2>
+                          <ul class="sortable-list connectList agile-list ui-sortable" id="tanks-wow">
+                            <% @all_characters.where(game_role: 'Tank').each do |c| %>
+                            <li class="<%= c.game_class.downcase %>-element">
+                              <%= c.name %>
+                            </li>
+                            <% end %>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="ibox">
+                        <div class="ibox-content">
+                          <h3>Healers</h3>
+                          <i class="fa fa-plus fa-2x"></i><br>
+                          <h2 id="healers-wow-n"></h2>
+                          <ul class="sortable-list connectList agile-list ui-sortable" id="healers-wow">
+                            <% @all_characters.where(game_role: 'Healer').each do |c| %>
+                            <li class="<%= c.game_class.downcase %>-element">
+                              <%= c.name %>
+                            </li>
+                            <% end %>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="profile">
+
+                <table class="table stripped">
+                  <tr>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td id="deathknight"><img class="class-icon" src="http://vignette2.wikia.nocookie.net/wowwiki/images/f/fa/IconSmall_Deathknight.gif/revision/latest?cb=20080717214217"></td>
+                  </tr>
+                  <tr>
+                    <td id="demonhunter"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/3/39/IconSmall_Demonhunter.gif/revision/latest?cb=20151108175244"></td>
+                  </tr>
+                  <tr>
+                    <td id="druid"><img class="class-icon" src="http://vignette2.wikia.nocookie.net/wowwiki/images/3/37/IconSmall_Druid.gif/revision/latest?cb=20050912092444"></td>
+                  </tr>
+                  <tr>
+                    <td id="hunter"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/f/fc/IconSmall_Hunter.gif/revision/latest?cb=20050912092456"></td>
+                  </tr>
+                  <tr>
+                    <td id="mage"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/9/93/IconSmall_Mage.gif/revision/latest?cb=20050912092507"></td>
+                  </tr>
+                  <tr>
+                    <td id="monk"><img class="class-icon" src="http://vignette2.wikia.nocookie.net/wowwiki/images/c/c9/IconSmall_Monk.gif/revision/latest?cb=20120216070907"></td>
+                  </tr>
+                  <tr>
+                    <td id="paladin"><img class="class-icon" src="http://macro-wow.com/wp-content/uploads/2012/08/paladin_icon.png"></td>
+                  </tr>
+                  <tr>
+                    <td id="priest"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/b/b5/IconSmall_Priest.gif/revision/latest?cb=20050912092540"></td>
+                  </tr>
+                  <tr>
+                    <td id="rogue"><img class="class-icon" src="http://vignette3.wikia.nocookie.net/wowwiki/images/8/80/IconSmall_Rogue.gif/revision/latest?cb=20050912092555"></td>
+                  </tr>
+                  <tr>
+                    <td id="shaman"><img class="class-icon" src="http://vignette2.wikia.nocookie.net/wowwiki/images/5/50/IconSmall_Shaman.gif/revision/latest?cb=20050912092607"></td>
+                  </tr>
+                  <tr>
+                    <td id="warlock"><img class="class-icon" src="http://macro-wow.com/wp-content/uploads/2012/08/warlock_icon.png"></td>
+                  </tr>
+                  <tr>
+                    <td id="warrior"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/4/4a/IconSmall_Warrior.gif/revision/latest?cb=20050912092648"></td>
+                  </tr>
+                </table>
+                <hr>
+                <p>Pending:</p>
+                <div id="pending" style="margin-bottom: 100px;"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
