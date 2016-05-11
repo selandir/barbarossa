@@ -1,0 +1,11 @@
+<li class="role-element <%= char.game_class.downcase.gsub(' ', '') %>-element">
+  <span class='itemlvl'>
+    <%= char.ilvl %>
+    <% if char.user_id == nil %>
+      <%= link_to '' do %>
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
+  </span>
+  <span class='char-name'><%= char.name %></span>
+</li>
