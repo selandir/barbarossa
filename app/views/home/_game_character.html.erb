@@ -1,7 +1,7 @@
-<li class="role-element <%= char.game_class.downcase.gsub(' ', '') %>-element">
+<li class="role-element <%= char.game_class.gsub(' ', '').downcase %>-element">
   <span class='itemlvl'>
     <%= char.ilvl %>
-    <% if char.user_id == nil %>
+    <% if char.user_id == 1 %>
       <%= link_to '' do %>
         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
       <% end %>

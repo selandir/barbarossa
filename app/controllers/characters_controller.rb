@@ -41,7 +41,7 @@ class CharactersController < ApplicationController
   # PATCH/PUT /characters/1
   def update
     if @character.update(character_params)
-      current_user.characters.push(@character) if @character.user_id.nil?
+      current_user.characters.push(@character) if @character.user_id == 1
       redirect_to characters_path, notice: 'Character was successfully updated.'
     else
       render :edit

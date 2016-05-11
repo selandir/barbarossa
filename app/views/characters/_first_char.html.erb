@@ -14,7 +14,7 @@
 
   <div class="form-group">
     <%= f.label :name, :class => "control-label col-sm-3"  %> <i></i>
-    <div class="col-sm-6"><%= f.select :name, Character.where(:user_id => nil).map{ |a| a.name },{}, { :class => 'form-control' } %>
+    <div class="col-sm-6"><%= f.select :name, Character.where(:user_id => 1).map{ |a| a.name },{}, { :class => 'form-control' } %>
     </div>
   </div>
   <%= f.hidden_field(:old_character, :value => 1) %>

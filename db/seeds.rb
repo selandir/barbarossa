@@ -370,5 +370,5 @@ json_seed_data.each do |j|
     :user_id => u.id
     )
 
-  puts "#{j[:name]}, #{new_char.save}"
+  puts "#{j[:name]}, #{new_char.save(:validate => false)}"
 end

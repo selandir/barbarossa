@@ -34,6 +34,7 @@ class Character < ActiveRecord::Base
     item_lvl = data.split('id="summary-averageilvl-best" class="best tip" data-id="averageilvl">').last.match(/\d+/)[0]
     data_arr = data.split('class="under-name color-c').last[3..500].gsub("\t", '').gsub(/<[^>]*>/, '').split(' ')
     self.game_class = data_arr[data_arr.index("Burning")-1][0..-2] # name without comma
+    self.game_class = 'Death Knight' if self.game_class == 'Knight'
     if item_lvl.size <= 3
       self.character_infos.push(CharacterInfo.new(:item_lvl => item_lvl))
     end
