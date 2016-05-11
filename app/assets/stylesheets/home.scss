@@ -64,50 +64,74 @@ body {
 .paladin-element {
     border-left: 12px solid #F58CBA !important;
     background-image: url('/img/tyrion.png');
+    background-repeat: no-repeat;
+    background-position: right;
 }
 .deathknight-element {
     border-left: 12px solid #C41F3B !important;
     background-image: url('/img/dk.png');
+    background-repeat: no-repeat;
+    background-position: right;
 }
 .druid-element {
     border-left: 12px solid #FF7D0A !important;
     background-image: url('/img/druid.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
   .hunter-element {
     border-left: 12px solid #ABD473 !important;
     background-image: url('/img/hunter.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
   .mage-element {
     border-left: 12px solid #69CCF0 !important;
     background-image: url('/img/mage.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
   .priest-element {
     border-left: 12px solid #e0e0e0 !important;
     background-image: url('/img/priest.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
   .rogue-element {
     border-left: 12px solid #FFF569 !important;
     background-image: url('/img/rogue.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
   .shaman-element {
     border-left: 12px solid #0070DE !important;
     background-image: url('/img/shaman.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
   .warlock-element {
     border-left: 12px solid #9482C9 !important;
     background-image: url('/img/lock.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
   .warrior-element {
     border-left: 12px solid #C79C6E !important;
     background-image: url('/img/warrior.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
   .demonhunter-element {
     border-left: 12px solid #4B5413 !important;
     background-image: url('/img/demonhunter.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
   .monk-element {
     border-left: 12px solid #00FF96 !important;
     background-image: url('/img/monk.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
 
   .pull-right {
@@ -120,13 +144,16 @@ body {
   margin-left: -50px;
 }
 .role-element {
+
   margin: 10px;
   padding: 10px;
   list-style-type: none;
-  border: 1px lightgray solid;
+  border-top: 1px lightgray solid;
   border-radius: 3px;
 }
 .itemlvl {
   float: left;
   font-weight: bold;
 }
+.char-name {
+  font-weight: bold;}

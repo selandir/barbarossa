@@ -1,7 +1,7 @@
 module CharactersHelper
 
   def role_name_to_fa name
-    case name.gsub(' ', '').downcase
+    case name.to_s.gsub(' ', '').downcase
     when 'tank'
      '<i class="fa fa-shield fa-2x"></i>'
     when 'healer'

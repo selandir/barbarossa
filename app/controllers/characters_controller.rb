@@ -4,6 +4,7 @@ class CharactersController < ApplicationController
   # GET /characters
   def index
     @characters = current_user.characters.all
+    @character = Character.new # for first char page
   end
 
   # GET /characters/1
@@ -21,11 +22,17 @@ class CharactersController < ApplicationController
 
   # POST /characters
   def create
-    @character = Character.new(character_params)
-    push_result = current_user.characters.push(@character)
+
+    if params[:character][:old_character]
+      @character = Character.where(:name => params[:character][:name]).first
+      push_result = current_user.characters.push(@character)
+    else
+      @character = Character.new(character_params)
+      push_result = current_user.characters.push(@character)
+    end
 
     if push_result
-      redirect_to @character, notice: 'Character was successfully created.'
+      redirect_to edit_character_path(@character), notice: 'Character was successfully created.'
     else
       render :new
     end
@@ -34,7 +41,8 @@ class CharactersController < ApplicationController
   # PATCH/PUT /characters/1
   def update
     if @character.update(character_params)
-      redirect_to @character, notice: 'Character was successfully updated.'
+      current_user.characters.push(@character) if @character.user_id.nil?
+      redirect_to characters_path, notice: 'Character was successfully updated.'
     else
       render :edit
     end
@@ -43,7 +51,7 @@ class CharactersController < ApplicationController
   # DELETE /characters/1
   def destroy
     @character.destroy
-    redirect_to characters_url, notice: 'Character was successfully destroyed.'
+    redirect_to characters_path, notice: 'Character was successfully destroyed.'
   end
 
   private

@@ -1,39 +1,44 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Characters</h1>
 
-<table class="table table-stripped">
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>item level</th>
-      <th>class</th>
-      <th>role</th>
-      <th>alt role</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1>Postacie:</h1>
 
-  <tbody>
-    <% @characters.each do |character| %>
+<% if @characters.count > 0 %>
+  <table class="table table-stripped">
+    <thead>
       <tr>
-        <td><%= character.name %></td>
-        <td><%= character.ilvl %></td>
-        <td>
-          <div class="<%= character.game_class.downcase %>-element">
-            <%= character.game_class %>
-          </div>
-        </td>
-        <td><%= role_name_to_fa(character.game_role).html_safe %></td>
-        <td><%= role_name_to_fa(character.game_alt_role).html_safe %></td>
-        <td><%= link_to 'Show', character, class: 'btn btn-xs btn-default' %></td>
-        <td><%= link_to 'Edit', edit_character_path(character), class: 'btn btn-xs btn-default' %></td>
-        <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
+        <th>name</th>
+        <th>item level</th>
+        <th>class</th>
+        <th>role</th>
+        <!-- <th>alt role</th> -->
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @characters.each do |character| %>
+        <tr>
+          <td><%= character.name %></td>
+          <td><%= character.ilvl %></td>
+          <td>
+            <div class="<%= character.game_class.to_s.downcase %>-element">
+              <%= character.game_class %>
+            </div>
+          </td>
+          <td><%= role_name_to_fa(character.game_role).html_safe %></td>
+          <!-- <td><%= role_name_to_fa(character.game_alt_role).html_safe %></td> -->
+          <td><%= link_to 'Show', character, class: 'btn btn-xs btn-default' %></td>
+          <td><%= link_to 'Edit', edit_character_path(character), class: 'btn btn-xs btn-default' %></td>
+          <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+<% else %>
+Obecnie nie posiadasz żadnej postaci przypisanej do swojego konta. Wskaż który wpis jest twój i zatwierdź wybór przyciskiem.
 
-<%= link_to 'Add Character', new_character_path, :class => 'btn btn-success' %>
+<%= render 'first_char' %>
+
+<% end %>
+<%= link_to 'Dodaj nastepną postać', new_character_path, :class => 'btn btn-success' if @characters.count > 0 %>

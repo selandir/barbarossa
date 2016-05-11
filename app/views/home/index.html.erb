@@ -3,18 +3,12 @@
     <h1 class="main-logo-name">BARBAROSSA</h1>
     Gildia "Barbarossa"
     <em>(dawniej "Oferujemy Kurtule")</em><br>
-    <a href="#poll">
-      <h2 style="font-weight:800;">
-        Kim grasz w Legionie?(click!)
-      </h2>
-    </a>
-    <br>
+
     <div class="row">
-      <div class="col-lg-3">
-        <%= render 'contact' %>
-      </div>
-      <div class="col-lg-9">
-        <%= render 'shoutbox' %>
+      <div class="col-lg-12">
+        <% if user_signed_in? %>
+          <%= render 'shoutbox' %>
+        <% end %>
       </div>
     </div>
 
@@ -28,7 +22,6 @@
   <div class="row">
     <div class="col-lg-12 text-center">
 
-
       <%= render 'form' %>
 
       <div class="container">
@@ -41,7 +34,7 @@
                 <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Lista osób wg. ról</a>
               </li>
               <li role="presentation">
-                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Lista osób wg. klas</a>
+                <a href="#profile" aria-controls="profile" role="tab" disabled>Lista osób wg. klas</a>
               </li>
             </ul>
 
@@ -53,14 +46,11 @@
                       <div class="ibox">
                         <div class="ibox-content">
                           <h3>Meele DD</h3>
-                          <i class="fa fa-gavel fa-2x"></i><br>
-                          <h2 id="ddm-wow-n"></h2>
+
+                          <h2 id="ddm-wow-n"><%= @all_characters.select{|e| e.game_role == 'Melee DD'}.count %> <i class="fa fa-gavel"></i></h2>
                           <ul class="list4" id="ddm-wow">
                             <% @all_characters.select{|e| e.game_role == 'Melee DD'}.each do |c| %>
-                            <li class="role-element <%= c.game_class.downcase.gsub(' ', '') %>-element">
-                              <%= c.name %>
-                              <span class='itemlvl'><%= c.ilvl %></span>
-                            </li>
+                              <%= render 'game_character', :char => c %>
                             <% end %>
                           </ul>
                         </div>
@@ -70,14 +60,11 @@
                       <div class="ibox">
                         <div class="ibox-content">
                           <h3>Ranged DD</h3>
-                          <i class="fa fa-crosshairs fa-2x"></i><br>
-                          <h2 id="dd-wow-n"></h2>
+
+                          <h2 id="dd-wow-n"><%= @all_characters.select{|e| e.game_role == 'Ranged DD'}.count %> <i class="fa fa-crosshairs"></i></h2>
                           <ul class="list4" id="dd-wow">
                             <% @all_characters.select{|e| e.game_role == 'Ranged DD'}.each do |c| %>
-                            <li class="role-element <%= c.game_class.downcase.gsub(' ', '') %>-element">
-                              <%= c.name %>
-                              <span class='itemlvl'><%= c.ilvl %></span>
-                            </li>
+                              <%= render 'game_character', :char => c %>
                             <% end %>
                           </ul>
                         </div>
@@ -87,14 +74,10 @@
                       <div class="ibox">
                         <div class="ibox-content">
                           <h3>Tanks</h3>
-                          <i class="fa fa-shield fa-2x"></i><br>
-                          <h2 id="tanks-wow-n"></h2>
+                          <h2 id="tanks-wow-n"><%= @all_characters.select{|e| e.game_role == 'Tank'}.count %> <i class="fa fa-shield"> </i></h2>
                           <ul class="list4" id="tanks-wow">
                             <% @all_characters.select{|e| e.game_role == 'Tank'}.each do |c| %>
-                            <li class="role-element <%= c.game_class.downcase.gsub(' ', '') %>-element">
-                              <%= c.name %>
-                              <span class='itemlvl'><%= c.ilvl %></span>
-                            </li>
+                              <%= render 'game_character', :char => c %>
                             <% end %>
                           </ul>
                         </div>
@@ -104,14 +87,11 @@
                       <div class="ibox">
                         <div class="ibox-content">
                           <h3>Healers</h3>
-                          <i class="fa fa-plus fa-2x"></i><br>
-                          <h2 id="healers-wow-n"></h2>
+
+                          <h2 id="healers-wow-n"><%= @all_characters.select{|e| e.game_role == 'Healer' }.count %> <i class="fa fa-plus"></i></h2>
                           <ul class="list4" id="healers-wow">
                             <% @all_characters.select{|e| e.game_role == 'Healer' }.each do |c| %>
-                            <li class="role-element <%= c.game_class.downcase.gsub(' ', '') %>-element">
-                              <%= c.name %>
-                              <span class='itemlvl'><%= c.ilvl %></span>
-                            </li>
+                              <%= render 'game_character', :char => c %>
                             <% end %>
                           </ul>
                         </div>
