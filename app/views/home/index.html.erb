@@ -3,11 +3,12 @@
     <h1 class="main-logo-name">BARBAROSSA</h1>
     Gildia "Barbarossa"
     <em>(dawniej "Oferujemy Kurtule")</em><br>
+    <hr>
 
     <div class="row">
       <div class="col-lg-12">
         <% if user_signed_in? %>
-          <%= render 'shoutbox' %>
+        <%= render 'shoutbox' %>
         <% end %>
       </div>
     </div>
@@ -27,126 +28,69 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="ibox">
+                  <div class="ibox-content">
+                    <h3>Meele DD</h3>
 
-
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active">
-                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Lista osób wg. ról</a>
-              </li>
-              <li role="presentation">
-                <a href="#profile" aria-controls="profile" role="tab" disabled>Lista osób wg. klas</a>
-              </li>
-            </ul>
-
-            <div class="tab-content">
-              <div role="tabpanel" class="tab-pane fade active in" id="home">
-                <div class="col-lg-12 text-center">
-                  <div class="row">
-                    <div class="col-lg-3">
-                      <div class="ibox">
-                        <div class="ibox-content">
-                          <h3>Meele DD</h3>
-
-                          <h2 id="ddm-wow-n"><%= @all_characters.select{|e| e.game_role == 'Melee DD'}.count %> <i class="fa fa-gavel"></i></h2>
-                          <ul class="list4" id="ddm-wow">
-                            <% @all_characters.select{|e| e.game_role == 'Melee DD'}.each do |c| %>
-                              <%= render 'game_character', :char => c %>
-                            <% end %>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="ibox">
-                        <div class="ibox-content">
-                          <h3>Ranged DD</h3>
-
-                          <h2 id="dd-wow-n"><%= @all_characters.select{|e| e.game_role == 'Ranged DD'}.count %> <i class="fa fa-crosshairs"></i></h2>
-                          <ul class="list4" id="dd-wow">
-                            <% @all_characters.select{|e| e.game_role == 'Ranged DD'}.each do |c| %>
-                              <%= render 'game_character', :char => c %>
-                            <% end %>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="ibox">
-                        <div class="ibox-content">
-                          <h3>Tanks</h3>
-                          <h2 id="tanks-wow-n"><%= @all_characters.select{|e| e.game_role == 'Tank'}.count %> <i class="fa fa-shield"> </i></h2>
-                          <ul class="list4" id="tanks-wow">
-                            <% @all_characters.select{|e| e.game_role == 'Tank'}.each do |c| %>
-                              <%= render 'game_character', :char => c %>
-                            <% end %>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="ibox">
-                        <div class="ibox-content">
-                          <h3>Healers</h3>
-
-                          <h2 id="healers-wow-n"><%= @all_characters.select{|e| e.game_role == 'Healer' }.count %> <i class="fa fa-plus"></i></h2>
-                          <ul class="list4" id="healers-wow">
-                            <% @all_characters.select{|e| e.game_role == 'Healer' }.each do |c| %>
-                              <%= render 'game_character', :char => c %>
-                            <% end %>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    <h2 id="ddm-wow-n"><%= @all_characters.select{|e| e.game_role == 'Melee DD'}.count %>
+                      <i class="fa fa-gavel"></i>
+                    </h2>
+                    <ul class="list4" id="ddm-wow">
+                      <% @all_characters.select{|e| e.game_role == 'Melee DD'}.each do |c| %>
+                      <%= render 'game_character', :char => c %>
+                      <% end %>
+                    </ul>
                   </div>
                 </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="profile">
+              <div class="col-lg-3">
+                <div class="ibox">
+                  <div class="ibox-content">
+                    <h3>Ranged DD</h3>
 
-                <table class="table stripped">
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td id="deathknight"><img class="class-icon" src="http://vignette2.wikia.nocookie.net/wowwiki/images/f/fa/IconSmall_Deathknight.gif/revision/latest?cb=20080717214217"></td>
-                  </tr>
-                  <tr>
-                    <td id="demonhunter"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/3/39/IconSmall_Demonhunter.gif/revision/latest?cb=20151108175244"></td>
-                  </tr>
-                  <tr>
-                    <td id="druid"><img class="class-icon" src="http://vignette2.wikia.nocookie.net/wowwiki/images/3/37/IconSmall_Druid.gif/revision/latest?cb=20050912092444"></td>
-                  </tr>
-                  <tr>
-                    <td id="hunter"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/f/fc/IconSmall_Hunter.gif/revision/latest?cb=20050912092456"></td>
-                  </tr>
-                  <tr>
-                    <td id="mage"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/9/93/IconSmall_Mage.gif/revision/latest?cb=20050912092507"></td>
-                  </tr>
-                  <tr>
-                    <td id="monk"><img class="class-icon" src="http://vignette2.wikia.nocookie.net/wowwiki/images/c/c9/IconSmall_Monk.gif/revision/latest?cb=20120216070907"></td>
-                  </tr>
-                  <tr>
-                    <td id="paladin"><img class="class-icon" src="http://macro-wow.com/wp-content/uploads/2012/08/paladin_icon.png"></td>
-                  </tr>
-                  <tr>
-                    <td id="priest"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/b/b5/IconSmall_Priest.gif/revision/latest?cb=20050912092540"></td>
-                  </tr>
-                  <tr>
-                    <td id="rogue"><img class="class-icon" src="http://vignette3.wikia.nocookie.net/wowwiki/images/8/80/IconSmall_Rogue.gif/revision/latest?cb=20050912092555"></td>
-                  </tr>
-                  <tr>
-                    <td id="shaman"><img class="class-icon" src="http://vignette2.wikia.nocookie.net/wowwiki/images/5/50/IconSmall_Shaman.gif/revision/latest?cb=20050912092607"></td>
-                  </tr>
-                  <tr>
-                    <td id="warlock"><img class="class-icon" src="http://macro-wow.com/wp-content/uploads/2012/08/warlock_icon.png"></td>
-                  </tr>
-                  <tr>
-                    <td id="warrior"><img class="class-icon" src="http://vignette1.wikia.nocookie.net/wowwiki/images/4/4a/IconSmall_Warrior.gif/revision/latest?cb=20050912092648"></td>
-                  </tr>
-                </table>
-                <hr>
-                <p>Pending:</p>
-                <div id="pending" style="margin-bottom: 100px;"></div>
+                    <h2 id="dd-wow-n"><%= @all_characters.select{|e| e.game_role == 'Ranged DD'}.count %>
+                      <i class="fa fa-crosshairs"></i>
+                    </h2>
+                    <ul class="list4" id="dd-wow">
+                      <% @all_characters.select{|e| e.game_role == 'Ranged DD'}.each do |c| %>
+                      <%= render 'game_character', :char => c %>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="ibox">
+                  <div class="ibox-content">
+                    <h3>Tanks</h3>
+                    <h2 id="tanks-wow-n"><%= @all_characters.select{|e| e.game_role == 'Tank'}.count %>
+                      <i class="fa fa-shield"></i>
+                    </h2>
+                    <ul class="list4" id="tanks-wow">
+                      <% @all_characters.select{|e| e.game_role == 'Tank'}.each do |c| %>
+                      <%= render 'game_character', :char => c %>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="ibox">
+                  <div class="ibox-content">
+                    <h3>Healers</h3>
 
+                    <h2 id="healers-wow-n"><%= @all_characters.select{|e| e.game_role == 'Healer' }.count %>
+                      <i class="fa fa-plus"></i>
+                    </h2>
+                    <ul class="list4" id="healers-wow">
+                      <% @all_characters.select{|e| e.game_role == 'Healer' }.each do |c| %>
+                      <%= render 'game_character', :char => c %>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
             </div>
@@ -154,4 +98,6 @@
           </div>
 
         </div>
+
       </div>
+    </div>
