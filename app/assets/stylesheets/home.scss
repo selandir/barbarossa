@@ -1,7 +1,14 @@
 body {
-    padding-top: 70px;
-    background-color: #fafafa;
+    padding-top: 50px;
+    background-image: url('/img/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+.container-bg{
+  // background-color: rgba(255,255,255,1);
 }
 .character-info {
     border: 0 gray solid;
