@@ -2,10 +2,14 @@
   <span class='itemlvl'>
     <%= char.ilvl %>
     <% if char.user_id == 1 %>
-      <%= link_to '' do %>
+      <%= link_to new_user_registration_path do %>
         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
       <% end %>
     <% end %>
   </span>
-  <span class='char-name'><%= char.name %></span>
+  <span class='char-name'>
+    <%= link_to char.armory_addr do %>
+      <%= char.name %>
+    <% end %>
+  </span>
 </li>

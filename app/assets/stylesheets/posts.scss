@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .shoutbox-txtarea {
-  width: 90%;
+  max-width: 90%;
   margin: 5px;
   border-radius: 5px;
+  background-color: rgba(255,255,255,0.2);
 
 }
